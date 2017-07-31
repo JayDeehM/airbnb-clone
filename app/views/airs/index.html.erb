@@ -1,0 +1,45 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Airs</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Room</th>
+      <th>Room type</th>
+      <th>Room name</th>
+      <th>Location</th>
+      <th>Description</th>
+      <th>Accomodation</th>
+      <th>Bedrooms</th>
+      <th>Beds</th>
+      <th>Bathrooms</th>
+      <th>Price</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @airs.each do |air| %>
+      <tr>
+        <td><%= air.room_id %></td>
+        <td><%= air.room_type %></td>
+        <td><%= air.room_name %></td>
+        <td><%= air.location %></td>
+        <td><%= air.description %></td>
+        <td><%= air.accomodation %></td>
+        <td><%= air.bedrooms %></td>
+        <td><%= air.beds %></td>
+        <td><%= air.bathrooms %></td>
+        <td><%= air.price %></td>
+        <td><%= link_to 'Show', air %></td>
+        <td><%= link_to 'Edit', edit_air_path(air) %></td>
+        <td><%= link_to 'Destroy', air, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Air', new_air_path %>

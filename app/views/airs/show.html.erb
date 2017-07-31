@@ -1,0 +1,54 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Room:</strong>
+  <%= @air.room_id %>
+</p>
+
+<p>
+  <strong>Room type:</strong>
+  <%= @air.room_type %>
+</p>
+
+<p>
+  <strong>Room name:</strong>
+  <%= @air.room_name %>
+</p>
+
+<p>
+  <strong>Location:</strong>
+  <%= @air.location %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @air.description %>
+</p>
+
+<p>
+  <strong>Accomodation:</strong>
+  <%= @air.accomodation %>
+</p>
+
+<p>
+  <strong>Bedrooms:</strong>
+  <%= @air.bedrooms %>
+</p>
+
+<p>
+  <strong>Beds:</strong>
+  <%= @air.beds %>
+</p>
+
+<p>
+  <strong>Bathrooms:</strong>
+  <%= @air.bathrooms %>
+</p>
+
+<p>
+  <strong>Price:</strong>
+  <%= @air.price %>
+</p>
+
+<%= link_to 'Edit', edit_air_path(@air) %> |
+<%= link_to 'Back', airs_path %>
