@@ -27,7 +27,7 @@ class AirsController < ApplicationController
   # POST /airs.json
   def create
     @air = Air.new(air_params)
-
+    @air.room_id = current_user.id
     respond_to do |format|
       if @air.save
         format.html { redirect_to @air, notice: 'Air was successfully created.' }
@@ -63,7 +63,16 @@ class AirsController < ApplicationController
     end
   end
 
+  def create
+    @user = User.create( user_params )
+  end
+
   private
+  
+    def user_params
+      params.require(:user).permit(:avatar)
+    end
+  
     # Use callbacks to share common setup or constraints between actions.
     def set_air
       @air = Air.find(params[:id])

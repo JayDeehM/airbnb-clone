@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170731085922) do
+ActiveRecord::Schema.define(version: 20170801063154) do
 
   create_table "airs", force: :cascade do |t|
     t.integer  "room_id"
@@ -45,9 +45,15 @@ ActiveRecord::Schema.define(version: 20170731085922) do
     t.string   "avatar_content_type"
     t.integer  "avatar_file_size"
     t.datetime "avatar_updated_at"
+    t.string   "username"
+    t.string   "fullname"
+    t.integer  "contactnumber"
+    t.text     "about"
+    t.string   "neighborhood"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+  add_index "users", ["username"], name: "index_users_on_username", unique: true
 
 end
